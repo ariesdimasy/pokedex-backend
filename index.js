@@ -26,6 +26,9 @@ app.use(cors());
 
 const mypokemonsRouter = require("./routes/mypokemons");
 app.use("/mypokemons", mypokemonsRouter);
+app.route("/", function (req, res) {
+  res.send("my pokemon app");
+});
 
 app.listen(port, () => {
   console.log("Application run on port : ", port);
