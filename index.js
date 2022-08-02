@@ -5,7 +5,6 @@ var cors = require("cors");
 const mongoose = require("mongoose");
 
 const app = express();
-const port = 5500;
 
 mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
@@ -30,6 +29,8 @@ app.get("/", function (req, res) {
   res.send("my pokemon app");
 });
 
-app.listen(port, () => {
-  console.log("Application run on port : ", port);
+var server_port = process.env.YOUR_PORT || process.env.PORT || 80;
+var server_host = process.env.YOUR_HOST || "0.0.0.0";
+app.listen(server_port, server_host, function () {
+  console.log("Listening on port %d", server_port);
 });
