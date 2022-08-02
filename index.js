@@ -26,7 +26,7 @@ app.use(cors());
 
 const mypokemonsRouter = require("./routes/mypokemons");
 app.use("/mypokemons", mypokemonsRouter);
-app.route("/", function (req, res) {
+app.get("/", function (req, res) {
   res.send("my pokemon app");
 });
 
