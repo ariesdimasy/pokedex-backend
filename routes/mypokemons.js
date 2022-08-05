@@ -42,7 +42,7 @@ router.get("/detail/:_id", async (req, res) => {
 
   try {
     myPokemon = await Mypokemon.findOne({
-      pokemonId: parseInt(_id),
+      _id: parseInt(_id),
     });
 
     if (myPokemon === null) {
