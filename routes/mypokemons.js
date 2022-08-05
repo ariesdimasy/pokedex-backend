@@ -65,8 +65,6 @@ router.post("/catch", async (req, res) => {
   const probability = [true, false];
   const chance = get_random(probability);
 
-  console.log("req ==> ", req.body);
-
   // const { pokemon_id, name } = req.body.data;
   const pokemon_id = req.body.pokemon_id;
   const name = req.body.name;
